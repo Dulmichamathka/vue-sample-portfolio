@@ -1,6 +1,6 @@
 <template>
   <v-app-bar
-    style="padding: 0px 90px"
+    style="padding: 0px 15px"
     app
     color="#FFEBEE"
     light
@@ -13,14 +13,50 @@
       >My Portfolio.</v-toolbar-title
     >
     <v-spacer></v-spacer>
-    <v-list color="#FFEBEE" class="d-flex align-center">
-      <v-list-item v-for="(menu, index) in menus" :key="index" :to="menu.route">
-        <v-list-item-title>{{ menu.title }} </v-list-item-title>
+    <v-list
+      color="#FFEBEE"
+      class="d-flex align-center list-content responsiveMenu"
+    >
+      <v-list-item
+        class="hidden-xs-only"
+        v-for="(menu, index) in menus"
+        :key="index"
+        :to="menu.route"
+      >
+        <v-list-item-title style="color: #263238"
+          >{{ menu.title }}
+        </v-list-item-title>
       </v-list-item>
       <v-btn class="ml-7" text>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
-      <v-btn outlined color="success" class="ml-6">Download CV</v-btn>
+
+      <div class="hidden-sm-and-up">
+        <template>
+          <div class="text-center">
+            <v-menu offset-y class="menu-wrapper">
+              <template v-slot:activator="{ on }">
+                <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(menu, index) in menus"
+                  :key="index"
+                  :to="menu.route"
+                >
+                  <v-list-item-title style="color: #263238"
+                    >{{ menu.title }}
+                  </v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </div>
+        </template>
+      </div>
+
+      <v-btn outlined color="success" class="ml-6 hidden-xs-only"
+        >Download CV</v-btn
+      >
     </v-list>
   </v-app-bar>
 </template>
@@ -31,7 +67,7 @@ export default {
 
   data: () => ({
     menus: [
-      { title: "Home", route: "home" },
+      { title: "Home", route: "/home" },
       { title: "About Me", route: "about-us" },
       { title: "Portfolio", route: "protfolio" },
       { title: "Project", route: "project" },
@@ -41,3 +77,15 @@ export default {
   }),
 };
 </script>
+
+<style>
+.responsiveMenu {
+  padding: 0px 0px;
+}
+
+.v-menu__content {
+  width: 162px;
+  top: 42px;
+  left: 361px;
+}
+</style>
