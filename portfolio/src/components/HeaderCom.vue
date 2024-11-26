@@ -23,9 +23,15 @@
         :key="index"
         :to="menu.route"
       >
-        <v-list-item-title style="color: #263238"
-          >{{ menu.title }}
-        </v-list-item-title>
+        <v-btn
+          :class="activeIndex === index ? 'active-btn' : ''"
+          text
+          @click="activeIndex = index"
+        >
+          <v-list-item-title style="color: #263238"
+            >{{ menu.title }}
+          </v-list-item-title>
+        </v-btn>
       </v-list-item>
       <v-btn class="ml-7" text>
         <v-icon>mdi-magnify</v-icon>
@@ -67,13 +73,14 @@ export default {
 
   data: () => ({
     menus: [
-      { title: "Home", route: "/home" },
-      { title: "About Me", route: "about-us" },
+      { title: "Home", route: "/" },
+      { title: "About Me", route: "/about" },
       { title: "Portfolio", route: "protfolio" },
       { title: "Project", route: "project" },
       { title: "Gallery", route: "galley" },
       { title: "Contact", route: "contact" },
     ],
+    activeIndex: 0,
   }),
 };
 </script>
@@ -87,5 +94,20 @@ export default {
   width: 162px;
   top: 42px;
   left: 361px;
+}
+
+.active-btn {
+  background-color: #d81b60 !important; /* Active button background color */
+  color: #fff !important; /* Active button text color */
+  border-radius: 5px; /* Make it rounded */
+  transition: all 0.3s ease; /* Smooth effect */
+}
+
+.v-btn {
+  transition: all 0.3s ease; /* Add transition for all buttons */
+}
+
+.v-list-item {
+  padding: 0px;
 }
 </style>

@@ -10,6 +10,8 @@
       <!--About Me-->
       <AboutMe />
 
+      <PortfolioCom />
+
       <router-view />
     </v-main>
   </v-app>
@@ -19,6 +21,7 @@
 import HeaderCom from "./components/HeaderCom.vue";
 import HeroCom from "./components/HeroCom.vue";
 import AboutMe from "./components/AboutMe.vue";
+import PortfolioCom from "./components/PortfolioCom.vue";
 export default {
   name: "App",
 
@@ -26,6 +29,7 @@ export default {
     HeaderCom,
     HeroCom,
     AboutMe,
+    PortfolioCom,
   },
 };
 </script>
