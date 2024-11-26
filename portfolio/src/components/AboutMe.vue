@@ -2,7 +2,6 @@
   <v-container
     fluid
     :style="{ background: $vuetify.theme.themes.light.background }"
-    color="transparent"
   >
     <v-row>
       <v-col lg="7">

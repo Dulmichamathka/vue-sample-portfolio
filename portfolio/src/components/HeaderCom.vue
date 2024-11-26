@@ -76,7 +76,6 @@ export default {
       { title: "Home", route: "/" },
       { title: "About Me", route: "/about" },
       { title: "Portfolio", route: "protfolio" },
-      { title: "Project", route: "project" },
       { title: "Gallery", route: "galley" },
       { title: "Contact", route: "contact" },
     ],
