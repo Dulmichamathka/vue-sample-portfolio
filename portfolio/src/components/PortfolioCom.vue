@@ -1,11 +1,9 @@
 <template>
-  <v-container class="my-">
+  <v-container class="my-15">
     <v-row justify="center">
       <v-col lg="12" class="text-center">
-        <v-subheader class="text-h4 justify-center">Protfolio</v-subheader>
-        <h3 class="font-weight-bold mb-6 mt-2" justify="center">
-          Welcome to My Portfolio!
-        </h3>
+        <v-subheader class="text-h4 justify-center">Projects</v-subheader>
+
         <p>
           Here, you’ll find a collection of the projects I’ve created using a
           variety of modern web development tools and design techniques. These

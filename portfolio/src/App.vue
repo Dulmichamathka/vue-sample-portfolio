@@ -13,6 +13,7 @@
       <PortfolioCom />
 
       <GalleryCom />
+      <ContactMe />
 
       <router-view />
     </v-main>
@@ -25,6 +26,7 @@ import HeroCom from "./components/HeroCom.vue";
 import AboutMe from "./components/AboutMe.vue";
 import PortfolioCom from "./components/PortfolioCom.vue";
 import GalleryCom from "./components/GalleryCom.vue";
+import ContactMe from "./components/ContactMe.vue";
 export default {
   name: "App",
 
@@ -34,6 +36,7 @@ export default {
     AboutMe,
     PortfolioCom,
     GalleryCom,
+    ContactMe,
   },
 };
 </script>
