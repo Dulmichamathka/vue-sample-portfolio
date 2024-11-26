@@ -32,7 +32,7 @@ export default {
   data: () => ({
     menus: [
       { title: "Home", route: "home" },
-      { title: "About us", route: "about-us" },
+      { title: "About Me", route: "about-us" },
       { title: "Portfolio", route: "protfolio" },
       { title: "Project", route: "project" },
       { title: "Gallery", route: "galley" },

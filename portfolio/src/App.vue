@@ -1,10 +1,9 @@
 <template>
   <v-app>
     <HeaderCom />
-    <v-content>
-      <HeroCom />
-    </v-content>
+
     <v-main>
+      <HeroCom />
       <router-view />
     </v-main>
   </v-app>
