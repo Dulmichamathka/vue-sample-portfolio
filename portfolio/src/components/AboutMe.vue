@@ -20,17 +20,17 @@
               <v-container>
                 <h1 align="center" class="white--text mt-10">About Me</h1>
                 <p
-                  class="white--text pa-12"
+                  class="white--text pa-10"
                   style="text-align: center; font-size: 20px"
                 >
                   Hi, I’m Dulmi Chamathka, a 21-year-old frontend developer with
                   a passion for creating beautiful, user-friendly websites and
                   applications. I have strong skills in HTML, CSS, JavaScript,
                   and frameworks like React and Vue, along with experience in
-                  using Figma for designing intuitive interfaces. I focus on
-                  building responsive and functional web applications while
-                  continuously improving my skills to deliver my best in every
-                  project.
+                  using Figma and AdobeXD for designing intuitive interfaces. I
+                  focus on building responsive and functional web applications
+                  while continuously improving my skills to deliver my best in
+                  every project.
                 </p>
 
                 <v-row>

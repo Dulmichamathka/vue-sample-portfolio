@@ -4,16 +4,31 @@
     <HeaderCom />
 
     <v-main>
-      <!--Home content-->
-      <HeroCom />
+      <!-- Home Section -->
+      <div id="home">
+        <HeroCom />
+      </div>
 
-      <!--About Me-->
-      <AboutMe />
+      <!-- About Me Section -->
+      <div id="about">
+        <AboutMe />
+      </div>
 
-      <PortfolioCom />
+      <!-- Portfolio Section -->
+      <div id="portfolio">
+        <PortfolioCom />
+      </div>
 
-      <GalleryCom />
-      <ContactMe />
+      <!-- Gallery Section -->
+      <div id="gallery">
+        <GalleryCom />
+      </div>
+
+      <!-- Contact Section -->
+      <div id="contact">
+        <ContactMe />
+      </div>
+
       <FooterCom />
 
       <router-view />

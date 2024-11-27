@@ -11,13 +11,13 @@
         </h3>
       </v-col>
 
-      <v-col v-for="n in 9" :key="n" class="d-flex child-flex" cols="2">
-        <v-img
-          :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-          :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-          aspect-ratio="1"
-          class="grey lighten-2"
-        >
+      <v-col
+        v-for="(image, index) in images"
+        :key="index"
+        class="d-flex child-flex"
+        cols="3"
+      >
+        <v-img :src="image" aspect-ratio="2" class="grey lighten-2">
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
               <v-progress-circular
@@ -34,6 +34,23 @@
 <script>
 export default {
   name: "GalleryCom",
+
+  data() {
+    return {
+      images: [
+        "01.PNG",
+        "02-scrolled-rightsidebar.PNG",
+        "dashboard.PNG",
+        "dashboard01.PNG",
+        "login2 (1).PNG",
+        "login2 (2).PNG",
+        "page01.PNG",
+        "page02.PNG",
+        "pageDown.PNG",
+        "pageUp.PNG",
+      ],
+    };
+  },
 };
 </script>
 <style></style>

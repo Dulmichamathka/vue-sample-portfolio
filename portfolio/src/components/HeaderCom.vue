@@ -21,12 +21,11 @@
         class="hidden-xs-only"
         v-for="(menu, index) in menus"
         :key="index"
-        :id="menu.route"
       >
         <v-btn
-          :class="activeIndex === index ? 'active-btn' : ''"
           text
-          @click="activeIndex = index"
+          :class="activeIndex === index ? 'active-btn' : ''"
+          @click="scrollTo(menu.route, index)"
         >
           <v-list-item-title style="color: #263238"
             >{{ menu.title }}
@@ -73,14 +72,24 @@ export default {
 
   data: () => ({
     menus: [
-      { title: "Home", route: "/" },
-      { title: "About Me", route: "/about" },
-      { title: "Portfolio", route: "protfolio" },
-      { title: "Gallery", route: "galley" },
+      { title: "Home", route: "home" },
+      { title: "About Me", route: "about" },
+      { title: "Portfolio", route: "portfolio" },
+      { title: "Gallery", route: "gallery" },
       { title: "Contact", route: "contact" },
     ],
     activeIndex: 0,
   }),
+
+  methods: {
+    scrollTo(sectionId, index) {
+      this.activeIndex = index; // Highlight the clicked button
+      const element = document.getElementById(sectionId); // Get section by id
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" }); // Smooth scroll
+      }
+    },
+  },
 };
 </script>
 
@@ -97,9 +106,13 @@ export default {
 
 .active-btn {
   background-color: #d81b60 !important; /* Active button background color */
-  color: #fff !important; /* Active button text color */
+  color: white !important; /* Active button text color */
   border-radius: 5px; /* Make it rounded */
   transition: all 0.3s ease; /* Smooth effect */
+}
+
+.active-btn .v-list-item__title {
+  color: white !important; /* Ensure text color changes */
 }
 
 .v-btn {
