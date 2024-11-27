@@ -21,7 +21,7 @@
         class="hidden-xs-only"
         v-for="(menu, index) in menus"
         :key="index"
-        :to="menu.route"
+        :id="menu.route"
       >
         <v-btn
           :class="activeIndex === index ? 'active-btn' : ''"

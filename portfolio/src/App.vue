@@ -14,6 +14,7 @@
 
       <GalleryCom />
       <ContactMe />
+      <FooterCom />
 
       <router-view />
     </v-main>
@@ -27,6 +28,7 @@ import AboutMe from "./components/AboutMe.vue";
 import PortfolioCom from "./components/PortfolioCom.vue";
 import GalleryCom from "./components/GalleryCom.vue";
 import ContactMe from "./components/ContactMe.vue";
+import FooterCom from "./components/FooterCom.vue";
 export default {
   name: "App",
 
@@ -37,6 +39,7 @@ export default {
     PortfolioCom,
     GalleryCom,
     ContactMe,
+    FooterCom,
   },
 };
 </script>

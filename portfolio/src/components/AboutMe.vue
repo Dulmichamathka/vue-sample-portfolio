@@ -81,6 +81,22 @@
                         ></a
                       >
                     </v-btn>
+
+                    <v-btn
+                      class="mx-2"
+                      fab
+                      dark
+                      large
+                      color="black"
+                      style="border: 1px solid"
+                    >
+                      <a
+                        href="https://www.linkedin.com/in/dulmi-chamathka-142a03325/"
+                        ><v-icon large dark color="#d81b60 "
+                          >mdi-linkedin</v-icon
+                        ></a
+                      >
+                    </v-btn>
                   </div>
                 </v-row>
               </v-container>
