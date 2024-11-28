@@ -1,4 +1,5 @@
-import VueDesign from "@/components/VueDesign.vue";
+import ReactDesigns from "@/views/ReactDesigns.vue";
+import VueDesign from "@/views/VueDesign.vue";
 import Vue from "vue";
 import VueRouter from "vue-router";
 
@@ -9,6 +10,12 @@ const routes = [
     path: "/vuedesign",
     name: "VueDesign",
     component: VueDesign,
+  },
+
+  {
+    path: "/reactdesign",
+    name: "ReactDesign",
+    component: ReactDesigns,
   },
 ];
 

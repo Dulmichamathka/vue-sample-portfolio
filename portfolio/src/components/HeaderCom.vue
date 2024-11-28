@@ -74,12 +74,20 @@ export default {
     menus: [
       { title: "Home", route: "home" },
       { title: "About Me", route: "about" },
-      { title: "Portfolio", route: "portfolio" },
+      { title: "Projects", route: "portfolio" },
       { title: "Gallery", route: "gallery" },
       { title: "Contact", route: "contact" },
     ],
     activeIndex: 0,
   }),
+
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
 
   methods: {
     scrollTo(sectionId, index) {
@@ -87,6 +95,32 @@ export default {
       const element = document.getElementById(sectionId); // Get section by id
       if (element) {
         element.scrollIntoView({ behavior: "smooth" }); // Smooth scroll
+      }
+    },
+
+    handleScroll() {
+      const sectionPositions = this.menus.map((menu) => {
+        const section = document.getElementById(menu.route);
+        //Fetches the DOM element with the id that matches the route of the current menu item.
+        // For menu.route = "home", it finds the section with id="home" in the DOM.
+        return section ? section.offsetTop : 0;
+        // offset take the distance of sections in  .
+        // If the "Home" section starts 200 pixels down the page, section.offsetTop for "Home" will be 200.
+        //The map function creates an array of vertical positions for all sections.
+        //sectionPositions = [200,800,1400,2100,2600]
+      });
+
+      const scrollPosition = window.scrollY;
+
+      for (let i = 0; i < sectionPositions.length; i++) {
+        if (
+          scrollPosition >= sectionPositions[i] &&
+          (i === sectionPositions.length - 1 ||
+            scrollPosition < sectionPositions[i + 1])
+        ) {
+          this.activeIndex = i;
+          break;
+        }
       }
     },
   },

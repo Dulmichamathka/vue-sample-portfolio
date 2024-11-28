@@ -35,7 +35,7 @@
       </v-col>
       <slot v-if="activePortfolio === 'webdesign'">
         <v-col lg="4" v-for="(web, webIndex) in webDesigns" :key="webIndex">
-          <v-card class="mb-15">
+          <v-card :to="web.route" class="mb-15" style="cursor: pointer">
             <v-img
               :src="web.img"
               class="white--text align-end"
@@ -49,7 +49,7 @@
         </v-col>
       </slot>
 
-      <slot v-if="activePortfolio === 'mobileapp'" :to="vuedesign">
+      <slot v-if="activePortfolio === 'mobileapp'">
         <v-col
           lg="4"
           v-for="(mobile, mobileIndex) in mobileApp"
@@ -81,8 +81,8 @@ export default {
       activePortfolio: "webdesign",
 
       webDesigns: [
-        { title: "Vue Web-Design", img: "vue.jpeg" },
-        { title: "React Web-Design", img: "react.jpeg" },
+        { title: "Vue Web-Design", img: "vue.jpeg", route: "/vuedesign" },
+        { title: "React Web-Design", img: "react.jpeg", route: "/reactdesign" },
       ],
 
       mobileApp: [
